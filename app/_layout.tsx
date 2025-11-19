@@ -6,10 +6,17 @@ export default function RootLayout() {
   function sair() {
     router.replace("/");
   }
-  return <Stack>
+  return <Stack
+    screenOptions={{
+      headerStyle: styles.header,
+    }}
+  >
     <Stack.Screen name="index" options={{ title: "Tela de Login" }} />
     <Stack.Screen name="telas" options={{
-      title: "Pizzaria do Seu Zé", headerRight: () => (<TouchableOpacity
+      headerTitle: () => (
+        <Text style={styles.title}>Pizzaria do seu Zé</Text>
+      ),
+      headerRight: () => (<TouchableOpacity
         style={styles.button}
         onPress={() => sair()}>
         <Text style={styles.buttonText}>Sair</Text>
