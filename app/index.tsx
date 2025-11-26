@@ -5,7 +5,7 @@ import styles from "./_root/style";
 export default function Index() {
 
   function login() {
-    router.replace("./telas");
+    router.push('/telas/login');
   }
 
   return (

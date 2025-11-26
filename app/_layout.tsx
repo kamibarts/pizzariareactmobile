@@ -1,12 +1,18 @@
 import { router, Stack } from "expo-router";
 import { Text, TouchableOpacity } from "react-native";
+import { AuthProvider } from "./_root/AuthContext";
+import { CartProvider } from "./_root/CartContext";
+import { PizzaProvider } from "./_root/PizzaContext";
 import styles from "./_root/style";
 
 export default function RootLayout() {
   function sair() {
     router.replace("/");
   }
-  return <Stack
+  return <AuthProvider>
+    <CartProvider>
+    <PizzaProvider>
+    <Stack
     screenOptions={{
       headerStyle: styles.header,
     }}
@@ -23,4 +29,7 @@ export default function RootLayout() {
       </TouchableOpacity>)
     }} />
   </Stack>;
+    </PizzaProvider>
+    </CartProvider>
+    </AuthProvider>;
 }

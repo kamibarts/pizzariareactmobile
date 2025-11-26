@@ -12,6 +12,10 @@ export default function Index() {
     router.replace("./telas/cardapio");
   }
 
+  function irParaReserva() {
+    router.replace('./telas/reserva');
+  }
+
   return (
     <View
       style={styles.conteiner}
@@ -20,8 +24,10 @@ export default function Index() {
         source={require("../../assets/forno.jpg")}
         style={styles.imgfundo}
       />
-      <Text style={styles.title}>Home</Text>
+      <Text style={styles.subtitle}>Deixe seu dia mais saboroso!!!</Text>
+      <Text style={styles.subtitle}>As melhores pizzas da cidade</Text>
       <TouchableOpacity
+      
         onPress={() => { irParaCardapio() }}
         style={styles.button}
       >
@@ -32,6 +38,12 @@ export default function Index() {
         style={styles.button}
       >
         <Text style={styles.buttonText}>Carrinho</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => { irParaReserva() }}
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>FAÇA SUA RESERVA</Text>
       </TouchableOpacity>
     </View>
   );
